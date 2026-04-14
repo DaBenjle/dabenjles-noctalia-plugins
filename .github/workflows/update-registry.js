@@ -5,9 +5,6 @@
  *
  * Scans all plugin directories for manifest.json files and generates
  * an updated registry.json with plugin metadata.
- *
- * @license MIT
- * @copyright Noctalia devs
  */
 
 import fs from "node:fs";
@@ -29,10 +26,13 @@ const REGISTRY_PATH = path.join(ROOT_DIR, "registry.json");
  */
 function getLastCommitDate(filePath) {
   try {
-    const result = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
-      cwd: ROOT_DIR,
+    const dir = path.dirname(filePath);
+
+    const result = execSync(`git log -1 --format=%cI -- manifest.json`, {
+      cwd: dir, // ← key change
       encoding: "utf8",
     }).trim();
+
     return result || null;
   } catch (error) {
     console.warn(`Warning: Could not get last commit date for ${filePath}`);
