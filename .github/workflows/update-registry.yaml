@@ -8,6 +8,7 @@ on:
       - main
     paths:
       - "**/manifest.json"
+      - ".gitmodules"
       - ".github/workflows/update-registry.js"
   pull_request:
     branches:
@@ -27,6 +28,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          submodules: recursive
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
