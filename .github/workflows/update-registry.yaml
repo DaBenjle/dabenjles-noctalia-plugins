@@ -6,10 +6,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "**/manifest.json"
-      - ".gitmodules"
-      - ".github/workflows/update-registry.js"
   pull_request:
     branches:
       - main
