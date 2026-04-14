@@ -1,4 +1,16 @@
 {
   "version": 1,
-  "plugins": []
+  "plugins": [
+    {
+      "id": "dmenu",
+      "name": "Dmenu Provider",
+      "version": "1.0.0",
+      "author": "Ben Hilton",
+      "description": "An IPC-driven dmenu replacement that lets external scripts present choices through a Noctalia panel.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "3.9.0",
+      "license": "MIT",
+      "lastUpdated": null
+    }
+  ]
 }
